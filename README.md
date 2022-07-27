@@ -8,16 +8,20 @@
     ```bash
     $ npm init -y
     ```
-    
+                
+<br/>    
+
 2. **webpack 설치하기**
-    - 웹팩을 사용하려면 webpack 과 webpack-cli 를 설치해야 한다.
+    - 웹팩을 사용하려면 webpack 과 webpack-cli 를 설치해야 한다.   
         ※ 개발 환경에서만 필요한 모듈이므로 -D (또는 —save-dev) 로 설치
         
     
     ```bash
     $ npm install -D webpack webpack-cli
     ```
-    
+               
+<br/>    
+ 
 3. **webpack.config.js 파일 만들기**
     - 웹팩 설정 파일을 만들어준다. 번들 파일을 만들기 위해서는 기본적으로 entry, output 두 속성이 필요하다.
         - entry : 번들링 시작 파일 위치
@@ -39,7 +43,9 @@
       },
     };
     ```
-    
+             
+<br/>    
+   
 4. **webpack 스크립트 세팅**
     - `npx webpack` 명령어로 웹팩을 실행시킬 수 있다. 이러면 entry 파일에서부터 시작해 번들링한 결과를 output 에 지정한 파일로 만들어 준다.
     - 다른 개발자와 협업할 때 용이하게 하기 위해 스트립트를 만들어 주는 게 좋다.
@@ -51,7 +57,9 @@
         "test": "echo \"Error: no test specified\" && exit 1"
       },
     ```
-    
+               
+<br/>    
+ 
 5. **의존성 모듈 js 파일에 넣어주기**
     - js 파일에 **require** 로 필요한 파일을 넣어준다. (외부파일, 이미지, css 등등…)
     - 필요한 모듈을 js 파일 안에서  require 로 가져와야 웹팩이 필요한 파일로 인식해 번들링할때 같이 묶어준다. (js 파일이라면 module.exports 로 내보내주는 것 잊지 말자.)
@@ -65,7 +73,8 @@
         //./src/data.js
         module.exports.agoraStatesDiscussions = {...};
         ```
-        
+                 
+<br/>       
     
 6. **로더(loader) 로 다른 유형 파일 전처리 해주기**
     - 웹팩은 기본적으로 js 와 JSON 만 이해하기 때문에, 다른 파일을 넣어준 경우 로더(loader) 로 전처리 해줘야한다.
@@ -101,7 +110,9 @@
             ```
             
         3. 웹팩을 실행시키면 이렇게 번들 파일(js)에 css 가 문자열로 들어가 있고, 실행한 html 문서에 `<style>` 태그가 삽입되어 있다.(실제 파일엔 없고, 실행시 DOM 에 삽입되어 있다.)
-            
+                
+<br/>    
+        
 7. **플러그인(plugin) 사용하기**
     - 플러그인을 사용해서 다양한 작업을 편리하게 할 수 있다.
     - 💻 웹팩은 기본적으로 js 파일하나만 번들 파일로 만들기에 html 문서는 번들 폴더에 따로 생성해줘야했다. 하지만 `html-webpack-plugin` 을 사용하면 html 도 번들 폴더에 자동 생성해준다.
@@ -129,7 +140,8 @@
             
         3. 웹팩을 실행하면 번들 폴더에 html 문서가 생기고 자동으로 번들링된 js 문서가 script 태그로 들어가 있다.
             
-    
+<br/>    
+
 8. **추가 설정하기 - target, mode, output.clean 등**
     - target: ["web", "es5"] :    
     web 용 es5 문법으로 컴파일(번들링) 하겠다. → ES6를 지원하지 않는 브라우저에서 실행 가능 → **브라우저 호환성** ⬆️
