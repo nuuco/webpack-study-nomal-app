@@ -1,4 +1,6 @@
-const agoraStatesDiscussions = [
+const { sanitize } = require('dompurify');
+
+module.exports.agoraStatesDiscussions = [
   {
     id: "D_kwDOHOApLM4APjJi",
     createdAt: "2022-05-16T01:02:17Z",
@@ -790,16 +792,16 @@ const agoraStatesDiscussions = [
   if (discussion.answer) {
     return {
       ...discussion,
-      bodyHTML: DOMPurify.sanitize(discussion.bodyHTML),
+      bodyHTML: sanitize(discussion.bodyHTML),
       answer: {
         ...discussion.answer,
-        bodyHTML: DOMPurify.sanitize(discussion.answer.bodyHTML)
+        bodyHTML: sanitize(discussion.answer.bodyHTML)
       }
     }
   }
 
   return {
     ...discussion,
-    bodyHTML: DOMPurify.sanitize(discussion.bodyHTML)
+    bodyHTML: sanitize(discussion.bodyHTML)
   }
 })
