@@ -1,4 +1,5 @@
-# My Agora States
+# 🚀 웹팩(Webpack) 번들링 연습
+👉 [리액트 앱 웹팩 번들링 연습 바로가기](https://github.com/nuuco/webpack-study-react-app)
 
 ## 📌 Webpack 을 적용해보자
 
@@ -133,7 +134,7 @@
               ...
               plugins: [new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, "src", "index.html")
-            		//번들 폴더에 생성해준 기존 html 문서 위치
+                //번들 폴더에 생성해준 기존 html 문서 위치
               })]
             };
             ```
